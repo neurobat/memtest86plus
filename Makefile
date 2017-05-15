@@ -38,7 +38,9 @@ OBJS= head.pre.o reloc.o main.o test.o init.o lib.o patn.o screen_buffer.o \
       config.o cpuid.o coreboot.o pci.o memsize.o spd.o error.o dmi.o controller.o \
       smp.o vmem.o random.o multiboot.o
 
-all: clean memtest.bin memtest
+all:
+	$(MAKE) clean
+	$(MAKE) memtest.bin memtest
 
 # Link it statically once so I know I don't have undefined
 # symbols and then link it dynamically so I have full
